@@ -1,0 +1,361 @@
+// ============================================================
+//  IKS Sustainability Explorer — Data
+// ============================================================
+
+export const topics = [
+  {
+    id: 'agriculture',
+    icon: '🌾',
+    tag: 'Krishi Vidya',
+    title: 'Traditional Agriculture',
+    devanagari: 'कृषि विद्या',
+    gradient: 'linear-gradient(90deg, #2d6a4f, #40916c)',
+    description:
+      'Ancient Indian agricultural wisdom encompassing crop rotation, companion planting, natural pest control and seed sovereignty — practices developed over millennia that sustain soil health and biodiversity.',
+    practices: ['Organic Farming', 'Seed Saving', 'Crop Rotation', 'Agroforestry', 'Biodynamic', 'Vermiculture'],
+    details: {
+      keyPractices: [
+        'Panchgavya — holistic organic treatment using five cow products',
+        'Beejamrit — seed treatment to enhance germination and immunity',
+        'Jeevamrit — microbial culture from cow dung for soil enrichment',
+        'Vrikshayurveda — ancient plant science text with cultivation guidance',
+        'Phad and Khari systems of community-managed farming',
+        'Mixed cropping (Polyculture) for pest resistance and nutrition',
+      ],
+      benefits: [
+        'Zero chemical input reduces soil toxicity',
+        'Heirloom seed preservation maintains genetic diversity',
+        'Companion planting reduces pest pressure naturally',
+        'Water retention improved through organic matter',
+        'Carbon sequestration through healthy soil biology',
+      ],
+      sdgs: ['SDG 2', 'SDG 13', 'SDG 15'],
+    },
+  },
+  {
+    id: 'water',
+    icon: '💧',
+    tag: 'Jal Vidya',
+    title: 'Water Harvesting',
+    devanagari: 'जल विद्या',
+    gradient: 'linear-gradient(90deg, #0077b6, #00b4d8)',
+    description:
+      'India developed sophisticated water management systems — stepwells, tanks, kunds, and baoris — that captured monsoon rainfall, recharged groundwater, and sustained communities through dry seasons for thousands of years.',
+    practices: ['Stepwells', 'Kund System', 'Johad', 'Tanka', 'Canal Irrigation', 'Rainwater Pits'],
+    details: {
+      keyPractices: [
+        'Johad — earthen check dams built by communities in Rajasthan',
+        'Stepwells (Vav/Baoli) — multi-functional water storage structures',
+        'Kund — underground circular tanks for rainwater collection',
+        'Phad system — collaborative canal irrigation in Maharashtra',
+        'Tanka — waterproof underground cisterns for drinking water',
+        'Zings — mountain water channels in Himalayan regions',
+      ],
+      benefits: [
+        'Groundwater table recharge in arid regions',
+        'Flood mitigation by absorbing peak runoff',
+        'Self-sufficient villages without external pipelines',
+        'Ecosystem restoration of rivers and streams',
+        'Community ownership encourages long-term maintenance',
+      ],
+      sdgs: ['SDG 6', 'SDG 11', 'SDG 13'],
+    },
+  },
+  {
+    id: 'philosophy',
+    icon: '🌿',
+    tag: 'Darshana',
+    title: 'Ecological Philosophy',
+    devanagari: 'पर्यावरण दर्शन',
+    gradient: 'linear-gradient(90deg, #6b4226, #a0522d)',
+    description:
+      'Indian philosophical traditions — from Vedanta to Jainism to Buddhism — embed ecological ethics at their core. Concepts like Vasudhaiva Kutumbakam, Pancha Mahabhuta, and Ahimsa guide humans towards living lightly on Earth.',
+    practices: ['Pancha Bhuta', 'Vasudhaiva Kutumbakam', 'Ahimsa', 'Prakriti', 'Dharma', 'Antyodaya'],
+    details: {
+      keyPractices: [
+        'Pancha Mahabhuta — five elements framework (earth, water, fire, air, space)',
+        'Vasudhaiva Kutumbakam — entire world is one family, inclusive of nature',
+        'Ahimsa (non-violence) — extending compassion to all living beings',
+        'Dharma — ecological duty and righteous living in harmony',
+        'Rta — cosmic order; humans must align with natural rhythms',
+        'Jainism\'s Anekantavada — multiple perspectives on environmental ethics',
+      ],
+      benefits: [
+        'Shifts worldview from exploitation to stewardship',
+        'Encourages plant-forward diets reducing land use',
+        'Sacred groves (Devavans) protect biodiversity hotspots',
+        'Festival calendars align with ecological seasons',
+        'Inspires minimalist consumption and material sufficiency',
+      ],
+      sdgs: ['SDG 12', 'SDG 13', 'SDG 15', 'SDG 17'],
+    },
+  },
+  {
+    id: 'harmony',
+    icon: '🕊️',
+    tag: 'Samrasta',
+    title: 'Harmony with Nature',
+    devanagari: 'प्रकृति सामरस्य',
+    gradient: 'linear-gradient(90deg, #d4a017, #f4a261)',
+    description:
+      'Indigenous communities in India developed lifestyles in symbiotic balance with forests, rivers, and biodiversity. From sacred groves to animal worship, these practices protected ecosystems centuries before modern conservation.',
+    practices: ['Sacred Groves', 'Animal Welfare', 'Forest Rights', 'Seasonal Living', 'Tribal Ecology', 'Biocultural'],
+    details: {
+      keyPractices: [
+        'Dev Vans (Sacred Groves) — community-protected old-growth forest patches',
+        'Totem animals — tribal prohibition on killing certain species',
+        'Pongal and harvest festivals celebrating gratitude to nature',
+        'Ayurvedic seasonal regimens (Ritucharya) for sustainable living',
+        'Chipko movement — evolved from ancient tree protection traditions',
+        'Van Panchayat — democratic community forest governance',
+      ],
+      benefits: [
+        'Over 13,000 sacred groves preserve rare endemic species',
+        'Traditional ecological calendars prevent over-harvesting',
+        'Community policing is more effective than state enforcement',
+        'Biocultural diversity linked to ecological health outcomes',
+        'Intergenerational knowledge transfer sustains biodiversity',
+      ],
+      sdgs: ['SDG 15', 'SDG 4', 'SDG 10', 'SDG 16'],
+    },
+  },
+];
+
+export const problems = [
+  {
+    id: 'drought',
+    icon: '🏜️',
+    name: 'Drought & Water Scarcity',
+    desc: 'Depleted groundwater, failed crops',
+    solutions: [
+      {
+        title: 'Johad Revival',
+        sanskrit: 'जोहड़ — वर्षा जल संचयन',
+        desc: 'The Johad is a traditional earthen embankment that collects monsoon runoff before it leaves the watershed. Popularized by Rajendra Singh (the "Waterman of India"), Johad restoration in Rajasthan recharged 8 rivers and lifted water tables by 6 metres in 20 years.',
+        steps: [
+          'Survey upper catchment area and identify natural depressions',
+          'Build semi-circular earthen bunds across seasonal streams',
+          'Plant native trees on embankments to prevent erosion',
+          'Community maintenance pacts for yearly desilting',
+          'Link multiple johads in series across the watershed',
+        ],
+        sdgs: [{ label: 'SDG 6', color: '#0077b6' }, { label: 'SDG 13', color: '#48cae4' }, { label: 'SDG 15', color: '#2d6a4f' }],
+      },
+    ],
+  },
+  {
+    id: 'soil_degradation',
+    icon: '🪨',
+    name: 'Soil Degradation',
+    desc: 'Chemical farming, lost soil health',
+    solutions: [
+      {
+        title: 'Zero-Budget Natural Farming (ZBNF)',
+        sanskrit: 'शून्य बजट प्राकृतिक कृषि',
+        desc: 'Developed by Subhash Palekar from ancient Vedic practices, ZBNF uses Beejamrit (seed treatment) and Jeevamrit (soil activator) made from local cow dung, urine, jaggery, and pulses. It restores microbial life, rebuilds humus, and eliminates input costs entirely.',
+        steps: [
+          'Procure desi cow dung and urine from local farmers',
+          'Prepare Beejamrit: mix 5kg dung, 5L urine, 50g lime, water',
+          'Soak seeds for 12 hours before sowing',
+          'Produce Jeevamrit weekly and drench soil before sowing',
+          'Introduce mulching with dry leaves to retain moisture',
+        ],
+        sdgs: [{ label: 'SDG 2', color: '#dda63a' }, { label: 'SDG 12', color: '#bf8b2e' }, { label: 'SDG 15', color: '#2d6a4f' }],
+      },
+    ],
+  },
+  {
+    id: 'biodiversity_loss',
+    icon: '🦋',
+    name: 'Biodiversity Loss',
+    desc: 'Species extinction, monoculture spread',
+    solutions: [
+      {
+        title: 'Sacred Grove (Dev Van) Network',
+        sanskrit: 'देव वन — पवित्र उपवन',
+        desc: 'Sacred groves are patches of old-growth forest protected by tribal communities through religious prohibitions on cutting or hunting. India has over 13,000 such groves covering up to 1.5 million hectares. They act as biodiversity refugia, watershed protectors, and seed banks for surrounding farmland.',
+        steps: [
+          'Identify existing sacred grove traditions in the community',
+          'Codify customary laws through gram sabha resolutions',
+          'Create buffer zones of native plant regeneration',
+          'Train community forest monitors (Van Rakshaks)',
+          'Connect grove corridors across landscape for wildlife movement',
+        ],
+        sdgs: [{ label: 'SDG 15', color: '#2d6a4f' }, { label: 'SDG 4', color: '#c5192d' }, { label: 'SDG 11', color: '#f99d26' }],
+      },
+    ],
+  },
+  {
+    id: 'food_security',
+    icon: '🌽',
+    name: 'Food Insecurity',
+    desc: 'Crop failure, nutritional deficiency',
+    solutions: [
+      {
+        title: 'Millets — Shreedhan (Sacred Grains)',
+        sanskrit: 'श्रीधान्य — पोषण एवं सुरक्षा',
+        desc: '"Shreedhan" (Auspicious Grain) refers to India\'s ancient millet varieties — Jowar, Bajra, Ragi, Foxtail, Barnyard. These are among the world\'s most climate-resilient crops, requiring 70% less water than rice. They are nutritional powerhouses used in traditional medicine and form the backbone of food security in tribal India.',
+        steps: [
+          'Replace monoculture paddy with millet-legume intercropping',
+          'Revive community seed libraries for 200+ heirloom varieties',
+          'Integrate traditional millet calendar with local rainfall patterns',
+          'Train cooks in traditional millet fermentation for nutrition',
+          'Connect small-holders to niche millet markets in cities',
+        ],
+        sdgs: [{ label: 'SDG 2', color: '#dda63a' }, { label: 'SDG 3', color: '#4c9f38' }, { label: 'SDG 13', color: '#48cae4' }],
+      },
+    ],
+  },
+  {
+    id: 'waste',
+    icon: '♻️',
+    name: 'Waste & Pollution',
+    desc: 'Plastic waste, river pollution',
+    solutions: [
+      {
+        title: 'Circular Economy — Ancient Indian Model',
+        sanskrit: 'पुनर्चक्रण — अपरिग्रह',
+        desc: 'The Jain principle of Aparigraha (non-possession) and the Ayurvedic concept of using every part of a plant/animal inspired zero-waste lifestyles. Traditional Indian households composted kitchen waste, reused cloth, built with mud and bamboo, and repaired rather than discarded. Community crafts like Kintsugi for pottery and Kantha (quilt-making from rags) exemplify circular thinking.',
+        steps: [
+          'Establish village-level wet waste composting using earthen pits',
+          'Revive traditional beeswax cloth (Mombatti wrap) as food packaging',
+          'Set up community repair cafés for electronics and clothing',
+          'Replace synthetic materials with jute, hemp, and bamboo',
+          'Promote Sattvik lifestyle reducing consumption at source',
+        ],
+        sdgs: [{ label: 'SDG 12', color: '#bf8b2e' }, { label: 'SDG 11', color: '#f99d26' }, { label: 'SDG 6', color: '#0077b6' }],
+      },
+    ],
+  },
+  {
+    id: 'climate',
+    icon: '🌡️',
+    name: 'Climate Change',
+    desc: 'Extreme heat, carbon emissions',
+    solutions: [
+      {
+        title: 'Vanamahotsava & Agroforestry',
+        sanskrit: 'वनमहोत्सव — हरित आवरण',
+        desc: 'India\'s ancient texts describe the Vanamahotsava tradition of massive community tree-planting tied to the monsoon season. Agroforestry systems like the Wadi model (used by Adivasi communities) integrate fruit trees, food crops, and fodder on the same plot — sequestering carbon while improving farm income and microclimate.',
+        steps: [
+          'Map degraded common lands for community plantation drives',
+          'Select indigenous species using Vriksharopa Paddhati guidelines',
+          'Create Wadi-style multilayer agroforestry on marginal lands',
+          'Introduce traditional cattle-herding rotations to manage grasslands',
+          'Monitor carbon sequestration through traditional phenology markers',
+        ],
+        sdgs: [{ label: 'SDG 13', color: '#48cae4' }, { label: 'SDG 15', color: '#2d6a4f' }, { label: 'SDG 1', color: '#e5243b' }],
+      },
+    ],
+  },
+];
+
+export const philosophies = [
+  {
+    concept: 'वसुधैव कुटुम्बकम्',
+    title: 'Vasudhaiva Kutumbakam',
+    icon: '🌍',
+    ornament: '🌏',
+    desc: 'The entire world is one family. This Maha Upanishad concept extends familial bonds to every being — human, animal, plant, and element — forming the philosophical bedrock of ecological solidarity and global cooperation on climate action.',
+    quote: '"All living beings are members of one family, all are made of the same substance, and all will return to the same source." — Maha Upanishad 6.71',
+  },
+  {
+    concept: 'पञ्च महाभूत',
+    title: 'Pancha Mahabhuta',
+    icon: '⚛️',
+    ornament: '🌊',
+    desc: 'The five great elements — Prithvi (Earth), Apas (Water), Agni (Fire), Vayu (Air), and Akasha (Space) — constitute all matter. Humans are microcosms of these elements; harming nature means harming oneself. This framework underpins Ayurveda and guides sustainable resource use.',
+    quote: '"As are the atoms of the body, so are the atoms of the universe. The human is nature in miniature." — Charaka Samhita',
+  },
+  {
+    concept: 'अहिंसा परमो धर्मः',
+    title: 'Ahimsa — Non-Violence',
+    icon: '🕊️',
+    ornament: '🌿',
+    desc: 'The supreme principle of non-violence towards all living beings drives plant-forward diets, protection of wildlife, and gentle farming. Gandhi extended Ahimsa to environmental action — seeing ecological destruction as violence against future generations.',
+    quote: '"The greatness of a nation and its moral progress can be judged by the way its animals are treated." — Mahatma Gandhi',
+  },
+  {
+    concept: 'ऋत परमो धर्मः',
+    title: 'Rta — Cosmic Order',
+    icon: '✨',
+    ornament: '🌙',
+    desc: 'Rta is the cosmic order governing natural cycles — seasons, rivers, ecosystems and human life. The Vedic injunction is to live in accordance with Rta rather than disrupting it. Traditional ecological calendars, sowing rituals, and forest laws all stem from this principle.',
+    quote: '"Those who disrupt the cosmic order (Rta) and exploit nature without return shall face the retribution of Varuna." — Rigveda',
+  },
+];
+
+export const sdgItems = [
+  {
+    num: 2,
+    icon: '🌾',
+    name: 'Zero Hunger',
+    color: '#dda63a',
+    bg: 'rgba(221,166,58,0.1)',
+    border: 'rgba(221,166,58,0.3)',
+    link: 'Traditional millets, organic farming, seed sovereignty',
+  },
+  {
+    num: 3,
+    icon: '💊',
+    name: 'Good Health',
+    color: '#4c9f38',
+    bg: 'rgba(76,159,56,0.1)',
+    border: 'rgba(76,159,56,0.3)',
+    link: 'Ayurveda, Yoga, healing plants, Panchagavya medicine',
+  },
+  {
+    num: 6,
+    icon: '💧',
+    name: 'Clean Water',
+    color: '#26bde2',
+    bg: 'rgba(38,189,226,0.1)',
+    border: 'rgba(38,189,226,0.3)',
+    link: 'Johad, Kund, Stepwells, Phad canal irrigation',
+  },
+  {
+    num: 11,
+    icon: '🏘️',
+    name: 'Sustainable Cities',
+    color: '#f99d26',
+    bg: 'rgba(249,157,38,0.1)',
+    border: 'rgba(249,157,38,0.3)',
+    link: 'Vernacular architecture, bioclimatic design, town planning',
+  },
+  {
+    num: 12,
+    icon: '♻️',
+    name: 'Responsible Consumption',
+    color: '#bf8b2e',
+    bg: 'rgba(191,139,46,0.1)',
+    border: 'rgba(191,139,46,0.3)',
+    link: 'Aparigraha, circular economy, zero-waste households',
+  },
+  {
+    num: 13,
+    icon: '🌡️',
+    name: 'Climate Action',
+    color: '#3f7e44',
+    bg: 'rgba(63,126,68,0.1)',
+    border: 'rgba(63,126,68,0.3)',
+    link: 'Agroforestry, Vanamahotsava, traditional carbon sinks',
+  },
+  {
+    num: 15,
+    icon: '🌿',
+    name: 'Life on Land',
+    color: '#56c02b',
+    bg: 'rgba(86,192,43,0.1)',
+    border: 'rgba(86,192,43,0.3)',
+    link: 'Sacred groves, tribal forest governance, biodiversity',
+  },
+  {
+    num: 17,
+    icon: '🤝',
+    name: 'Partnerships',
+    color: '#19486a',
+    bg: 'rgba(25,72,106,0.1)',
+    border: 'rgba(25,72,106,0.3)',
+    link: 'Community co-operation, Panchayati Raj ecological models',
+  },
+];
