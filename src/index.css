@@ -598,6 +598,272 @@ section {
 }
 
 /* ============ PROBLEM SOLVER ============ */
+.topics-toolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.topics-search {
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.topics-search-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.topics-search-input {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(10, 22, 18, 0.72);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.topics-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.topics-search-input:focus {
+  border-color: var(--secondary-light);
+  box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.12);
+}
+
+.topics-search-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding-bottom: 0.35rem;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.practice-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary-light), var(--accent));
+  opacity: 0.9;
+}
+
+.practice-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow), var(--shadow-glow);
+}
+
+.practice-card-button {
+  width: 100%;
+  padding: 1.6rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.practice-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.practice-card-category,
+.practice-card-sdg,
+.practice-modal-category,
+.practice-modal-sdg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.practice-card-category,
+.practice-modal-category {
+  padding: 0.35rem 0.75rem;
+  background: rgba(64, 145, 108, 0.16);
+  border: 1px solid rgba(64, 145, 108, 0.32);
+  color: var(--primary-light);
+}
+
+.practice-card-sdg,
+.practice-modal-sdg {
+  padding: 0.35rem 0.7rem;
+  background: rgba(212, 160, 23, 0.16);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  color: var(--secondary-light);
+}
+
+.practice-card-title,
+.practice-modal-title {
+  font-family: 'Cinzel', serif;
+  color: var(--text-primary);
+}
+
+.practice-card-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.practice-card-region,
+.practice-modal-meta {
+  color: var(--accent-light);
+  font-size: 0.86rem;
+  margin-bottom: 0.9rem;
+}
+
+.practice-card-description,
+.practice-modal-summary,
+.practice-modal-panel p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 0.94rem;
+}
+
+.practices-empty {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px dashed var(--border-hover);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  background: rgba(15, 34, 24, 0.6);
+}
+
+.practices-empty h3 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 0.5rem;
+}
+
+.practices-empty p {
+  color: var(--text-secondary);
+}
+
+.practice-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 240;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 10, 8, 0.72);
+  backdrop-filter: blur(12px);
+  animation: fadeIn 0.25s ease;
+}
+
+.practice-modal {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: min(88vh, 820px);
+  overflow: auto;
+  border-radius: 28px;
+  border: 1px solid var(--border-hover);
+  background: linear-gradient(180deg, rgba(16, 38, 27, 0.98), rgba(9, 20, 15, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.practice-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.practice-modal-close:hover {
+  background: rgba(231, 111, 81, 0.16);
+  border-color: rgba(231, 111, 81, 0.35);
+}
+
+.practice-modal-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-right: 3rem;
+}
+
+.practice-modal-title {
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  margin: 0.7rem 0 0.35rem;
+}
+
+.practice-modal-summary {
+  margin-bottom: 1.4rem;
+}
+
+.practice-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.practice-modal-panel {
+  padding: 1.2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.practice-modal-panel h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--secondary-light);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.practice-modal-panel-full {
+  grid-column: 1 / -1;
+}
+
 .solver-section {
   background: linear-gradient(135deg, rgba(15, 34, 24, 0.9), rgba(10, 22, 18, 0.95));
   border-top: 1px solid var(--border);
@@ -1026,6 +1292,11 @@ section {
   .hero-stats { gap: 2rem; }
   .solver-wrapper { grid-template-columns: 1fr; }
   .topics-grid { grid-template-columns: 1fr; }
+  .practices-grid { grid-template-columns: 1fr; }
+  .topics-toolbar { align-items: stretch; }
+  .practice-modal { padding: 1.4rem; }
+  .practice-modal-header { flex-direction: column; padding-right: 2.5rem; }
+  .practice-modal-grid { grid-template-columns: 1fr; }
 }
 
 /* Divider */
