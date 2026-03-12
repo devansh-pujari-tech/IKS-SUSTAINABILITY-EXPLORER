@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <section className="hero" id="home" aria-label="Hero section">
@@ -18,17 +20,17 @@ export default function Hero() {
       </p>
 
       <p className="hero-subtitle">
-        Discover millennia-old Indian traditions that hold the answers to today's
-        greatest environmental challenges — from drought to biodiversity loss.
+        Discover millennia-old Indian traditions that hold the answers to today&apos;s
+        greatest environmental challenges from drought to biodiversity loss.
       </p>
 
       <div className="hero-cta">
-        <a href="#topics" className="btn-primary" id="explore-topics-btn">
+        <Link to="/topics" className="btn-primary" id="explore-topics-btn">
           🌱 Explore Topics
-        </a>
-        <a href="#solutions" className="btn-secondary" id="find-solutions-btn">
+        </Link>
+        <Link to="/solver" className="btn-secondary" id="find-solutions-btn">
           ⚡ Find Solutions
-        </a>
+        </Link>
       </div>
 
       <div className="hero-stats" role="list" aria-label="Key statistics">
