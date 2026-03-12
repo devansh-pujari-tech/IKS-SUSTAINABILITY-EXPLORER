@@ -1,51 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const navItems = [
-  { href: '#home', label: 'Home' },
-  { href: '#topics', label: 'Topics' },
-  { href: '#solutions', label: 'Solutions' },
-  { href: '#philosophy', label: 'Philosophy' },
-  { href: '#sdgs', label: 'SDGs' },
+  { to: '/', label: 'Home', end: true },
+  { to: '/topics', label: 'Topics' },
+  { to: '/solver', label: 'Solutions' },
+  { to: '/philosophy', label: 'Philosophy' },
+  { to: '/sdg', label: 'SDGs' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState('#home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      // Determine active section
-      const sections = ['home', 'topics', 'solutions', 'philosophy', 'sdgs'];
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActive('#' + sections[i]);
-          break;
-        }
-      }
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
-      <a href="#home" className="nav-brand">
+      <Link to="/" className="nav-brand">
         <span className="nav-logo">🌿</span>
         <span className="nav-title">Sustainability Explorer</span>
-      </a>
+      </Link>
       <ul className="nav-links">
         {navItems.map((item) => (
-          <li key={item.href}>
-            <a
-              href={item.href}
-              className={active === item.href ? 'active' : ''}
-            >
+          <li key={item.to}>
+            <NavLink to={item.to} end={item.end}>
               {item.label}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>
